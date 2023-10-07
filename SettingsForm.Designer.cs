@@ -28,12 +28,56 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "SettingsForm";
+            HotkeyCombobox = new ComboBox();
+            CancelButton = new Button();
+            SaveButton = new Button();
+            SuspendLayout();
+            // 
+            // HotkeyCombobox
+            // 
+            HotkeyCombobox.FormattingEnabled = true;
+            HotkeyCombobox.Location = new Point(24, 26);
+            HotkeyCombobox.Name = "HotkeyCombobox";
+            HotkeyCombobox.Size = new Size(121, 23);
+            HotkeyCombobox.TabIndex = 0;
+            // 
+            // CancelButton
+            // 
+            CancelButton.Location = new Point(12, 74);
+            CancelButton.Name = "CancelButton";
+            CancelButton.Size = new Size(65, 41);
+            CancelButton.TabIndex = 1;
+            CancelButton.Text = "Cancel";
+            CancelButton.UseVisualStyleBackColor = true;
+            CancelButton.Click += button1_Click;
+            // 
+            // SaveButton
+            // 
+            SaveButton.Location = new Point(95, 74);
+            SaveButton.Name = "SaveButton";
+            SaveButton.Size = new Size(64, 41);
+            SaveButton.TabIndex = 2;
+            SaveButton.Text = "Save";
+            SaveButton.UseVisualStyleBackColor = true;
+            SaveButton.Click += SaveButton_Click;
+            // 
+            // SettingsForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(171, 136);
+            Controls.Add(SaveButton);
+            Controls.Add(CancelButton);
+            Controls.Add(HotkeyCombobox);
+            Name = "SettingsForm";
+            Text = "Settings";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private ComboBox HotkeyCombobox;
+        private Button CancelButton;
+        private Button SaveButton;
     }
 }

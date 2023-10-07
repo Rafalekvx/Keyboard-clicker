@@ -76,6 +76,20 @@ namespace Keyboard_clicker_windows_by_rafalek__WinForms_
         Enter = VirtualKeyCode.RETURN,
         Backspace = VirtualKeyCode.BACK,
         ESC = VirtualKeyCode.ESCAPE,
-        Space = VirtualKeyCode.SPACE
+        Space = VirtualKeyCode.SPACE,
+
+        //Numpad
+        Numpad0 = VirtualKeyCode.NUMPAD0,
+        Numpad1 = VirtualKeyCode.NUMPAD1,
+        Numpad2 = VirtualKeyCode.NUMPAD2,
+        Numpad3 = VirtualKeyCode.NUMPAD3,
+        Numpad4 = VirtualKeyCode.NUMPAD4,
+        Numpad5 = VirtualKeyCode.NUMPAD5,
+        Numpad6 = VirtualKeyCode.NUMPAD6,
+        Numpad7 = VirtualKeyCode.NUMPAD7,
+        Numpad8 = VirtualKeyCode.NUMPAD8,
+        Numpad9 = VirtualKeyCode.NUMPAD9,
+        NumLock = VirtualKeyCode.NUMLOCK,
+
     }
 }

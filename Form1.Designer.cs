@@ -39,8 +39,10 @@
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
             settingsToolStripMenuItem = new ToolStripMenuItem();
-            quitToolStripMenuItem = new ToolStripMenuItem();
             changeHotkeyToolStripMenuItem = new ToolStripMenuItem();
+            quitToolStripMenuItem = new ToolStripMenuItem();
+            label4 = new Label();
+            KeyClicked = new Label();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -51,7 +53,7 @@
             KeyInput.Name = "KeyInput";
             KeyInput.Size = new Size(119, 23);
             KeyInput.TabIndex = 0;
-            KeyInput.Text = "Select a character";
+            KeyInput.Text = "Select a key";
             KeyInput.SelectedValueChanged += KeyInput_SelectedValueChanged;
             // 
             // TimeInput
@@ -64,7 +66,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(79, 218);
+            textBox2.Location = new Point(12, 218);
             textBox2.Multiline = true;
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(153, 49);
@@ -93,11 +95,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(40, 53);
+            label1.Location = new Point(50, 53);
             label1.Name = "label1";
-            label1.Size = new Size(90, 15);
+            label1.Size = new Size(68, 15);
             label1.TabIndex = 5;
-            label1.Text = "Select character";
+            label1.Text = "Select a key";
             // 
             // label2
             // 
@@ -137,28 +139,48 @@
             // 
             settingsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { changeHotkeyToolStripMenuItem });
             settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            settingsToolStripMenuItem.Size = new Size(180, 22);
+            settingsToolStripMenuItem.Size = new Size(116, 22);
             settingsToolStripMenuItem.Text = "Settings";
-            // 
-            // quitToolStripMenuItem
-            // 
-            quitToolStripMenuItem.Name = "quitToolStripMenuItem";
-            quitToolStripMenuItem.Size = new Size(180, 22);
-            quitToolStripMenuItem.Text = "Quit";
-            quitToolStripMenuItem.Click += quitToolStripMenuItem_Click;
             // 
             // changeHotkeyToolStripMenuItem
             // 
             changeHotkeyToolStripMenuItem.Name = "changeHotkeyToolStripMenuItem";
-            changeHotkeyToolStripMenuItem.Size = new Size(180, 22);
+            changeHotkeyToolStripMenuItem.Size = new Size(154, 22);
             changeHotkeyToolStripMenuItem.Text = "Change hotkey";
             changeHotkeyToolStripMenuItem.Click += changeHotkeyToolStripMenuItem_Click;
+            // 
+            // quitToolStripMenuItem
+            // 
+            quitToolStripMenuItem.Name = "quitToolStripMenuItem";
+            quitToolStripMenuItem.Size = new Size(116, 22);
+            quitToolStripMenuItem.Text = "Quit";
+            quitToolStripMenuItem.Click += quitToolStripMenuItem_Click;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(216, 218);
+            label4.Name = "label4";
+            label4.Size = new Size(89, 15);
+            label4.TabIndex = 9;
+            label4.Text = "Last clicked key";
+            // 
+            // KeyClicked
+            // 
+            KeyClicked.AutoSize = true;
+            KeyClicked.Location = new Point(239, 242);
+            KeyClicked.Name = "KeyClicked";
+            KeyClicked.Size = new Size(26, 15);
+            KeyClicked.TabIndex = 10;
+            KeyClicked.Text = "Key";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(339, 291);
+            Controls.Add(KeyClicked);
+            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -168,11 +190,13 @@
             Controls.Add(TimeInput);
             Controls.Add(KeyInput);
             Controls.Add(menuStrip1);
+            KeyPreview = true;
             MainMenuStrip = menuStrip1;
             Name = "Form1";
-            Text = "Form1";
+            Text = "Keyboard clicker by rafalek";
             FormClosing += Form1_FormClosing;
             Load += Form1_Load;
+            KeyDown += Form1_KeyDown;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -194,5 +218,7 @@
         private ToolStripMenuItem settingsToolStripMenuItem;
         private ToolStripMenuItem quitToolStripMenuItem;
         private ToolStripMenuItem changeHotkeyToolStripMenuItem;
+        private Label label4;
+        private Label KeyClicked;
     }
 }
