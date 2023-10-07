@@ -24,6 +24,18 @@ namespace Keyboard_clicker_windows_by_rafalek__WinForms_
             InitializeComboBox();
             mainForm = form1;
             HotkeyCombobox.SelectedItem = Properties.Settings.Default.Hotkey;
+
+            SaveButton.FlatAppearance.MouseOverBackColor = SaveButton.BackColor;
+            SaveButton.BackColorChanged += (s, e) =>
+            {
+                SaveButton.FlatAppearance.MouseOverBackColor = SaveButton.BackColor;
+            };
+
+            CancelButton.FlatAppearance.MouseOverBackColor = CancelButton.BackColor;
+            CancelButton.BackColorChanged += (s, e) =>
+            {
+                CancelButton.FlatAppearance.MouseOverBackColor = CancelButton.BackColor;
+            };
         }
 
         private void InitializeComboBox()

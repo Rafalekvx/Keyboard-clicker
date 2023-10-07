@@ -35,6 +35,19 @@ namespace Keyboard_clicker_windows_by_rafalek__WinForms_
             InitializeComboBox();
             inputSimulator = new InputSimulator();
             keyboardSimulator = new InputSimulator().Keyboard;
+
+            StopButton.FlatAppearance.MouseOverBackColor = StopButton.BackColor;
+            StopButton.BackColorChanged += (s, e) =>
+            {
+                StopButton.FlatAppearance.MouseOverBackColor = StopButton.BackColor;
+            };
+
+            StartButton.FlatAppearance.MouseOverBackColor = StartButton.BackColor;
+            StartButton.BackColorChanged += (s, e) =>
+            {
+                StartButton.FlatAppearance.MouseOverBackColor = StartButton.BackColor;
+            };
+
         }
 
 
@@ -64,7 +77,7 @@ namespace Keyboard_clicker_windows_by_rafalek__WinForms_
             }
             for (int l = 0; l <= 9; l++)
             {
-                KeyInput.Items.Add("Numpad"+l.ToString());
+                KeyInput.Items.Add("Numpad" + l.ToString());
             }
         }
 
@@ -180,6 +193,7 @@ namespace Keyboard_clicker_windows_by_rafalek__WinForms_
         {
             KeyClicked.Text = e.KeyCode.ToString();
         }
+
     }
 
 }
